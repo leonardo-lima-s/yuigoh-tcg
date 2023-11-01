@@ -1,0 +1,14 @@
+<p-dialog header="Card Detail - {{ card.name || '' }}" [(visible)]="show" [maximizable]="true" (onHide)="onHide()">
+	<p-progressSpinner *ngIf="isLoading"></p-progressSpinner>
+	<p-galleria
+		[value]="card.card_images"
+		[showIndicators]="true"
+		[showThumbnails]="false"
+		[responsiveOptions]="responsiveOptions"
+		[containerStyle]="{ 'max-width': '640px' }"
+	>
+		<ng-template pTemplate="item" let-item *ngIf="!isLoading">
+			<img [src]="item.image_url" style="width: 100%; display: block" />
+		</ng-template>
+	</p-galleria>
+</p-dialog>

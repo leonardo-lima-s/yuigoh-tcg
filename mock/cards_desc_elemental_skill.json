@@ -1,0 +1,138 @@
+[
+  {
+    "id": 300302044,
+    "name": "Believe in your Bro",
+    "type": "Skill Card",
+    "frameType": "skill",
+    "desc": "Once per turn, you can activate 1 of these Skills based on the face-up monster(s) you control:\r\n● \"Elemental HERO\": Discard 1 Trap, then add 1 Level 6 or lower Machine \"roid\" monster from your GY to your hand, then you can destroy 1 monster your opponent controls whose ATK is less than or equal to the added card's.\r\n● Machine \"roid\": Discard 1 Spell, then Special Summon 1 Level 6 or lower Machine \"roid\" or \"Elemental HERO\" monster from your Deck in Defense Position, but negate its effects.\r\n ● Both: Discard 1 card, then Fusion Summon 1 Fusion Monster using only \"roid\" and \"Elemental HERO\" monsters you control.\r\nEach of these Skills can only be used once per Duel.",
+    "race": "",
+    "card_sets": [
+      {
+        "set_name": "Speed Duel GX: Midterm Paradox",
+        "set_code": "SGX2-ENS11",
+        "set_rarity": "Common",
+        "set_rarity_code": "(C)",
+        "set_price": "0"
+      }
+    ],
+    "card_images": [
+      {
+        "id": 300302044,
+        "image_url": "https://images.ygoprodeck.com/images/cards/300302044.jpg",
+        "image_url_small": "https://images.ygoprodeck.com/images/cards_small/300302044.jpg",
+        "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/300302044.jpg"
+      }
+    ],
+    "card_prices": [
+      {
+        "cardmarket_price": "0.00",
+        "tcgplayer_price": "0.10",
+        "ebay_price": "0.99",
+        "amazon_price": "0.00",
+        "coolstuffinc_price": "0.49"
+      }
+    ]
+  },
+  {
+    "id": 300302031,
+    "name": "Here Goes Something!",
+    "type": "Skill Card",
+    "frameType": "skill",
+    "desc": "Once per Duel, you can activate this Skill at the start of your Battle Phase, while you control exactly 1 \"Elemental HERO\" monster (and no other monsters). For the rest of this turn, that 1 monster gains 800 ATK while battling an opponent's monster and can attack all monsters your opponent controls, once each, also you cannot Special Summon monsters for the rest of this turn.",
+    "race": "Jaden Yuki",
+    "card_sets": [
+      {
+        "set_name": "Speed Duel GX: Duel Academy Box",
+        "set_code": "SGX1-ENS01",
+        "set_rarity": "Common",
+        "set_rarity_code": "(C)",
+        "set_price": "0"
+      }
+    ],
+    "card_images": [
+      {
+        "id": 300302031,
+        "image_url": "https://images.ygoprodeck.com/images/cards/300302031.jpg",
+        "image_url_small": "https://images.ygoprodeck.com/images/cards_small/300302031.jpg",
+        "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/300302031.jpg"
+      }
+    ],
+    "card_prices": [
+      {
+        "cardmarket_price": "0.00",
+        "tcgplayer_price": "0.14",
+        "ebay_price": "1.09",
+        "amazon_price": "0.25",
+        "coolstuffinc_price": "0.79"
+      }
+    ]
+  },
+  {
+    "id": 300302050,
+    "name": "HEROES UNITE - FUSION!!",
+    "type": "Skill Card",
+    "frameType": "skill",
+    "desc": "Activate this Skill during your Main Phase. Discard 1 card, then Fusion Summon 1 \"Elemental HERO\" Fusion Monster from your Extra Deck, using monsters from your hand or field as Fusion Material. If Summoning an \"Elemental HERO\" Fusion Monster this way that requires 3 or more materials, and you control 2 \"Elemental HERO\" monsters that are mentioned on it as materials, you can also use monsters in your Deck as Fusion Material. This Skill can only be used once per Duel.",
+    "race": "Jaden Yuki",
+    "card_sets": [
+      {
+        "set_name": "Speed Duel GX: Midterm Paradox",
+        "set_code": "SGX2-ENS01",
+        "set_rarity": "Common",
+        "set_rarity_code": "(C)",
+        "set_price": "0"
+      }
+    ],
+    "card_images": [
+      {
+        "id": 300302050,
+        "image_url": "https://images.ygoprodeck.com/images/cards/300302050.jpg",
+        "image_url_small": "https://images.ygoprodeck.com/images/cards_small/300302050.jpg",
+        "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/300302050.jpg"
+      }
+    ],
+    "card_prices": [
+      {
+        "cardmarket_price": "0.00",
+        "tcgplayer_price": "0.15",
+        "ebay_price": "0.99",
+        "amazon_price": "0.00",
+        "coolstuffinc_price": "0.49"
+      }
+    ]
+  },
+  {
+    "id": 300302041,
+    "name": "The Right Hero for the Job",
+    "type": "Skill Card",
+    "frameType": "skill",
+    "desc": "Once per Duel, during your Main Phase, you can shuffle 1 \"Elemental HERO\" monster you control into your Deck, then Special Summon 1 Level 4 or lower \"Elemental HERO\" monster from your Main Deck with a different name than the shuffled card.",
+    "race": "Jaden Yuki",
+    "card_sets": [
+      {
+        "set_name": "Speed Duel GX: Duel Academy Box",
+        "set_code": "SGX1-ENS09",
+        "set_rarity": "Common",
+        "set_rarity_code": "(C)",
+        "set_price": "0"
+      }
+    ],
+    "card_images": [
+      {
+        "id": 300302041,
+        "image_url": "https://images.ygoprodeck.com/images/cards/300302041.jpg",
+        "image_url_small": "https://images.ygoprodeck.com/images/cards_small/300302041.jpg",
+        "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/300302041.jpg"
+      }
+    ],
+    "card_prices": [
+      {
+        "cardmarket_price": "0.00",
+        "tcgplayer_price": "0.16",
+        "ebay_price": "0.99",
+        "amazon_price": "0.25",
+        "coolstuffinc_price": "0.79"
+      }
+    ]
+  }
+]
