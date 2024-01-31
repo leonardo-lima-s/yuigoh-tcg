@@ -141,4 +141,5 @@ export class ListCardsComponent implements OnInit {
 	}
 
 	public setCardDetails(card: any) {}
+
 }
