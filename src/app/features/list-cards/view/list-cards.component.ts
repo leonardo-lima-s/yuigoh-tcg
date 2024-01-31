@@ -135,11 +135,9 @@ export class ListCardsComponent implements OnInit {
 
 	public onShowDialog(card: any) {
 		this.cardDetailsDialog.isLoading = true;
-		this.cardDetailsDialog.card.card_images = card.card_images;
-		this.cardDetailsDialog.card.name = card.name;
+		this.cardDetailsDialog.card = card;
 		this.cardDetailsDialog.onShow();
 	}
 
 	public setCardDetails(card: any) {}
-
 }

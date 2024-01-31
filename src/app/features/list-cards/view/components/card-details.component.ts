@@ -10,6 +10,7 @@ export class CardDetailsComponent implements OnInit {
 	public show = false;
 	public responsiveOptions: any[] = [];
 	public isLoading = false;
+	public maximized = false;
 
 	public ngOnInit(): void {
 		this.responsiveOptions = [
@@ -39,6 +40,18 @@ export class CardDetailsComponent implements OnInit {
 	}
 
 	public resetCard() {
+		console.log(this.card);
 		this.card = { name: '' };
+		this.maximized = false;
+	}
+
+	onMaximize(event: any) {
+		this.maximized = event.maximized;
+	}
+
+	getGridCol(isAcordion = false) {
+		if (isAcordion) return 'col-8';
+
+		return this.maximized ? 'col-4' : 'col-12';
 	}
 }

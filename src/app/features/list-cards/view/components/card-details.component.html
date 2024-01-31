@@ -1,14 +1,66 @@
-<p-dialog header="Card Detail - {{ card.name || '' }}" [(visible)]="show" [maximizable]="true" (onHide)="onHide()">
-	<p-progressSpinner *ngIf="isLoading"></p-progressSpinner>
-	<p-galleria
-		[value]="card.card_images"
-		[showIndicators]="true"
-		[showThumbnails]="false"
-		[responsiveOptions]="responsiveOptions"
-		[containerStyle]="{ 'max-width': '640px' }"
-	>
-		<ng-template pTemplate="item" let-item *ngIf="!isLoading">
-			<img [src]="item.image_url" style="width: 100%; display: block" />
-		</ng-template>
-	</p-galleria>
+<p-dialog
+	header="Card Detail - {{ card.name || '' }}"
+	[(visible)]="show"
+	[maximizable]="true"
+	(onHide)="onHide()"
+	(onMaximize)="onMaximize($event)"
+>
+	<diV class="grid">
+		<div [ngClass]="getGridCol()">
+			<p-galleria
+				[value]="card.card_images"
+				[showIndicators]="true"
+				[showThumbnails]="false"
+				[responsiveOptions]="responsiveOptions"
+				[containerStyle]="{ 'max-width': '640px' }"
+			>
+				<ng-template pTemplate="item" let-item *ngIf="!isLoading">
+					<img [src]="item.image_url" style="width: 100%; display: block" />
+				</ng-template>
+			</p-galleria>
+		</div>
+		<div [ngClass]="getGridCol(true)" *ngIf="maximized">
+			<p-tabView [activeIndex]="0">
+				<p-tabPanel header="Price">
+					<div class="grid">
+						<div class="col-12">
+							<label>Cardmarket: ${{ card.card_prices[0].cardmarket_price }}</label>
+						</div>
+						<div class="col-12">
+							<label>TCGPlayer: ${{ card.card_prices[0].tcgplayer_price }}</label>
+						</div>
+						<div class="col-12">
+							<label>Ebay: ${{ card.card_prices[0].ebay_price }}</label>
+						</div>
+						<div class="col-12">
+							<label>Amazon: ${{ card.card_prices[0].amazon_price }}</label>
+						</div>
+						<div class="col-12">
+							<label>CoolStuffInc: ${{ card.card_prices[0].coolstuffinc_price }}</label>
+						</div>
+					</div>
+				</p-tabPanel>
+				<p-tabPanel header="Card sets">
+					<p-accordion [activeIndex]="0">
+						<p-accordionTab *ngFor="let card_set of card.card_sets" [header]="card_set.set_name">
+							<div class="grid">
+								<div class="col-12">
+									<label>Set code: {{ card_set.set_code }}</label>
+								</div>
+								<div class="col-12">
+									<label>Set rarity: {{ card_set.set_rarity }}</label>
+								</div>
+								<div class="col-12">
+									<label>Set rarity Code: {{ card_set.set_rarity_code }}</label>
+								</div>
+								<div class="col-12">
+									<label>Set price: ${{ card_set.set_price }}</label>
+								</div>
+							</div>
+						</p-accordionTab>
+					</p-accordion>
+				</p-tabPanel>
+			</p-tabView>
+		</div>
+	</diV>
 </p-dialog>

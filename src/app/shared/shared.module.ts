@@ -10,6 +10,8 @@ import { RatingModule } from 'primeng/rating';
 import { DialogModule } from 'primeng/dialog';
 import { GalleriaModule } from 'primeng/galleria';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { AccordionModule } from 'primeng/accordion';
+import { TabViewModule } from 'primeng/tabview';
 
 @NgModule({
 	exports: [
@@ -25,6 +27,8 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 		DialogModule,
 		GalleriaModule,
 		ProgressSpinnerModule,
+		AccordionModule,
+		TabViewModule,
 	],
 })
 export class SharedModule {}
