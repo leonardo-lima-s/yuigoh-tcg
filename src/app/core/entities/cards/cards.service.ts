@@ -6,27 +6,32 @@ const DEFAULT_URL = 'https://db.ygoprodeck.com/api/v7/cardinfo.php';
 
 @Injectable()
 export class CardsService {
-  constructor(protected http: HttpClient) {}
+	constructor(protected http: HttpClient) {}
 
-  public getCardList(filter?: CardFilter) {
-    const filterUrl = this.getUrlFilter(filter);
-    const url = filterUrl ? `${DEFAULT_URL}?${filterUrl}` : `${DEFAULT_URL}`;
+	public getCardList(filter?: CardFilter, language = 'en') {
+		const filterUrl = this.getUrlFilter(filter);
+		let url = DEFAULT_URL;
+		if (language !== 'en') {
+			url = filterUrl ? `${url}?language${language}&${filter}` : `${url}?language=${language}`;
+		} else {
+			url = filterUrl ? `${url}?${filter}` : url;
+		}
 
-    return this.http.get(url);
-  }
+		console.log(url);
 
-  private getUrlFilter(filter: any) {
-    if (!filter) return;
+		return this.http.get(url);
+	}
 
-    let filterUrl = '';
-    Object.keys(filter).forEach((key: string) => {
-      if (filter[key]) {
-        filterUrl = filterUrl
-          ? `${filterUrl}&${key}=${filter[key]}`
-          : `${key}=${filter[key]}`;
-      }
-    });
+	private getUrlFilter(filter: any) {
+		if (!filter) return;
 
-    return filterUrl;
-  }
+		let filterUrl = '';
+		Object.keys(filter).forEach((key: string) => {
+			if (filter[key]) {
+				filterUrl = filterUrl ? `${filterUrl}&${key}=${filter[key]}` : `${key}=${filter[key]}`;
+			}
+		});
+
+		return filterUrl;
+	}
 }
