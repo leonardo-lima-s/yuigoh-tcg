@@ -4,7 +4,8 @@
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
-		"build:prod": "ng build --configuration production",
+		"build": "ng build",
+		"build:prod": "ng build --prod",
 		"test:headless": "ng test --watch=false --browsers=ChromeHeadless"
 	},
 	"engines": {
