@@ -40,7 +40,6 @@ export class CardDetailsComponent implements OnInit {
 	}
 
 	public resetCard() {
-		console.log(this.card);
 		this.card = { name: '' };
 		this.maximized = false;
 	}
