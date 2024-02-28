@@ -152,5 +152,10 @@ export class ListCardsComponent implements OnInit {
 		this.listCards();
 	}
 
+	public onErrorLoadImageAvatar(event: any) {
+		console.log(event);
+		this.messageService.add({ severity: 'error', summary: 'Error', detail: 'erro', sticky: true });
+	}
+
 	public setCardDetails(card: any) {}
 }

@@ -8,6 +8,7 @@
 						styleClass="mr-2"
 						shape="circle"
 						image="https://i.pinimg.com/736x/ac/e9/1d/ace91d6c41bffaa526c6c507202cce98.jpg"
+						(onImageError)="onErrorLoadImageAvatar($event)"
 					></p-avatar>
 					<p-dropdown
 						[options]="languages"
