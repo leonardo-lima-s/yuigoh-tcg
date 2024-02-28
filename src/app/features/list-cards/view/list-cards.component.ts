@@ -24,6 +24,14 @@ export class ListCardsComponent implements OnInit {
 	public frames: any = [];
 	public attributes: any = [];
 	public selectedCards: any = [];
+	public selectedLanguage = { code: 'en', name: 'English' };
+	public languages = [
+		{ name: 'English', code: 'en' },
+		{ name: 'France', code: 'fr' },
+		{ name: 'German', code: 'de' },
+		{ name: 'Italian', code: 'it' },
+		{ name: 'Portuguese', code: 'pt' },
+	];
 
 	@ViewChild(CardDetailsComponent, { static: true }) cardDetailsDialog!: CardDetailsComponent;
 
@@ -66,7 +74,7 @@ export class ListCardsComponent implements OnInit {
 			level,
 		};
 
-		this.cardService.getCardList(cardFilter).subscribe({
+		this.cardService.getCardList(cardFilter, this.selectedLanguage.code).subscribe({
 			next: (response: any) => {
 				this.cards = response.data || MIRROR_FORCE;
 				this.loading = false;
@@ -137,6 +145,11 @@ export class ListCardsComponent implements OnInit {
 		this.cardDetailsDialog.isLoading = true;
 		this.cardDetailsDialog.card = card;
 		this.cardDetailsDialog.onShow();
+	}
+
+	public onSelectedLanguage(event: any) {
+		this.selectedLanguage = event.value;
+		this.listCards();
 	}
 
 	public setCardDetails(card: any) {}

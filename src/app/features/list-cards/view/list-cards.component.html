@@ -1,5 +1,29 @@
 <div class="grid">
 	<div class="col-12">
+		<div class="grid card grid-nogutter product-header">
+			<div class="col-12 md:col-6">
+				<div class="flex align-items-start flex-wrap">
+					<p-avatar
+						icon="pi pi-user"
+						styleClass="mr-2"
+						shape="circle"
+						image="https://i.pinimg.com/736x/ac/e9/1d/ace91d6c41bffaa526c6c507202cce98.jpg"
+					></p-avatar>
+					<p-dropdown
+						[options]="languages"
+						[(ngModel)]="selectedLanguage"
+						optionLabel="name"
+						class="w-full p-fluid w-10rem h-4rem"
+						placeholder="Select a language"
+						appendTo="body"
+						(onChange)="onSelectedLanguage($event)"
+					></p-dropdown>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-12">
 		<p-panel [toggleable]="true">
 			<p-header>Filters</p-header>
 			<div class="formgrid">
@@ -65,14 +89,8 @@
 				</form>
 			</div>
 			<p-footer>
-				<div class="grid">
-					<div class="col-1">
-						<p-button label="Search" (onClick)="listCards()"></p-button>
-					</div>
-					<div class="col-1">
-						<p-button label="Clear" (onClick)="onClearFilters()"></p-button>
-					</div>
-				</div>
+				<p-button label="Search" (onClick)="listCards()" class="button-search"></p-button>
+				<p-button label="Clear" (onClick)="onClearFilters()" class="p-1"></p-button>
 			</p-footer>
 		</p-panel>
 	</div>
@@ -94,6 +112,7 @@
 						[paginator]="true"
 						[tableStyle]="{ 'min-width': '50rem' }"
 						[rowsPerPageOptions]="[10, 25, 50]"
+						[responsive]="true"
 					>
 						<ng-template pTemplate="header" let-columns>
 							<tr>

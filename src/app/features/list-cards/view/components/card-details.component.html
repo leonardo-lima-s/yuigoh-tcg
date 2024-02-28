@@ -50,6 +50,7 @@
 						[loading]="isLoading"
 						currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} registros"
 						dataKey="set_name"
+						[responsive]="true"
 					>
 						<ng-template pTemplate="header" let-columns>
 							<tr>
@@ -88,6 +89,7 @@
 											[paginator]="true"
 											currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} registros"
 											[totalRecords]="card.card_sets.length"
+											[responsive]="true"
 										>
 											<ng-template pTemplate="header" let-columuns="columnsRowExpansion">
 												<tr>

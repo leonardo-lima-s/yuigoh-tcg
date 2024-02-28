@@ -12,6 +12,7 @@ import { GalleriaModule } from 'primeng/galleria';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { AccordionModule } from 'primeng/accordion';
 import { TabViewModule } from 'primeng/tabview';
+import { AvatarModule } from 'primeng/avatar';
 
 @NgModule({
 	exports: [
@@ -29,6 +30,7 @@ import { TabViewModule } from 'primeng/tabview';
 		ProgressSpinnerModule,
 		AccordionModule,
 		TabViewModule,
+		AvatarModule,
 	],
 })
 export class SharedModule {}
