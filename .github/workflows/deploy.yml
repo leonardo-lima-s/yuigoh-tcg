@@ -32,4 +32,4 @@ jobs:
 
     - name: Deploy
       if: success()
-      run: aws s3 sync dist\yugioh-tcg s3://yugioh-tcg
+      run: aws s3 sync dist/yugioh-tcg s3://yugioh-tcg
