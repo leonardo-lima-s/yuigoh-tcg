@@ -11,6 +11,18 @@ export class CardDetailsComponent implements OnInit {
 	public responsiveOptions: any[] = [];
 	public isLoading = false;
 	public maximized = false;
+	public columns: any[] = [];
+	public columnsRowExpansion: any[] = [];
+
+	constructor() {
+		this.columns = [{ header: 'Set name', field: 'set_name' }];
+		this.columnsRowExpansion = [
+			{ header: 'Set code', field: 'set_code' },
+			{ header: 'Set rarity', field: 'set_rarity' },
+			{ header: 'Set rarity code', field: 'set_rarity_code' },
+			{ header: 'Set price', field: 'set_price' },
+		];
+	}
 
 	public ngOnInit(): void {
 		this.responsiveOptions = [

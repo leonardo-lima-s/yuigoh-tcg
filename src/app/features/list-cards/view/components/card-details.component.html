@@ -41,24 +41,74 @@
 					</div>
 				</p-tabPanel>
 				<p-tabPanel header="Card sets">
-					<p-accordion [activeIndex]="0">
-						<p-accordionTab *ngFor="let card_set of card.card_sets" [header]="card_set.set_name">
-							<div class="grid">
-								<div class="col-12">
-									<label>Set code: {{ card_set.set_code }}</label>
-								</div>
-								<div class="col-12">
-									<label>Set rarity: {{ card_set.set_rarity }}</label>
-								</div>
-								<div class="col-12">
-									<label>Set rarity Code: {{ card_set.set_rarity_code }}</label>
-								</div>
-								<div class="col-12">
-									<label>Set price: ${{ card_set.set_price }}</label>
-								</div>
-							</div>
-						</p-accordionTab>
-					</p-accordion>
+					<p-table
+						[value]="card.card_sets"
+						[columns]="columns"
+						[rows]="10"
+						[paginator]="true"
+						[totalRecords]="card.card_sets.length"
+						[loading]="isLoading"
+						currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} registros"
+						dataKey="set_name"
+					>
+						<ng-template pTemplate="header" let-columns>
+							<tr>
+								<th style="width: 5rem"></th>
+								<th *ngFor="let col of columns" id="header">
+									<span>{{ col.header }}</span>
+								</th>
+							</tr>
+						</ng-template>
+						<ng-template pTemplate="body" let-columns="columns" let-rowData let-expanded="expanded">
+							<tr>
+								<td>
+									<button
+										type="button"
+										pButton
+										pRipple
+										[pRowToggler]="rowData"
+										class="p-button-text p-button-rounded p-button-plain"
+										[icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"
+									></button>
+								</td>
+								<td *ngFor="let col of columns">
+									<span>{{ rowData[col.field] }}</span>
+								</td>
+							</tr>
+						</ng-template>
+						<ng-template pTemplate="rowexpansion" let-rowData>
+							<tr>
+								<td colspan="7">
+									<div class="p-3">
+										<p-table
+											[value]="card.card_sets"
+											[columns]="columnsRowExpansion"
+											[rows]="10"
+											dataKey="set_code"
+											[paginator]="true"
+											currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} registros"
+											[totalRecords]="card.card_sets.length"
+										>
+											<ng-template pTemplate="header" let-columuns="columnsRowExpansion">
+												<tr>
+													<th *ngFor="let col of columnsRowExpansion">
+														<span>{{ col.header }}</span>
+													</th>
+												</tr>
+											</ng-template>
+											<ng-template pTemplate="body" let-columns="columnsRowExpansion" let-rowData>
+												<tr>
+													<td *ngFor="let col of columnsRowExpansion">
+														<span>{{ rowData[col.field] }}</span>
+													</td>
+												</tr>
+											</ng-template>
+										</p-table>
+									</div>
+								</td>
+							</tr>
+						</ng-template>
+					</p-table>
 				</p-tabPanel>
 			</p-tabView>
 		</div>
