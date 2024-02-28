@@ -12,9 +12,10 @@ export class CardsService {
 		const filterUrl = this.getUrlFilter(filter);
 		let url = DEFAULT_URL;
 		if (language !== 'en') {
-			url = filterUrl ? `${url}?language${language}&${filter}` : `${url}?language=${language}`;
+			url = filterUrl ? `${url}?language${language}&${filterUrl}` : `${url}?language=${language}`;
 		} else {
-			url = filterUrl ? `${url}?${filter}` : url;
+			console.log(filterUrl);
+			url = filterUrl ? `${url}?${filterUrl}` : url;
 		}
 
 		console.log(url);
@@ -31,6 +32,8 @@ export class CardsService {
 				filterUrl = filterUrl ? `${filterUrl}&${key}=${filter[key]}` : `${key}=${filter[key]}`;
 			}
 		});
+
+		console.log(filterUrl);
 
 		return filterUrl;
 	}
